@@ -4,7 +4,8 @@
   "description": "Welcome to the API section, which is part of the Event attendee management application for in-person events project.",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch --env-file .env src/server"
+    "dev": "tsx watch --env-file .env src/server",
+    "studio": "prisma studio"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.12.1",
-    "fastify": "^4.26.2"
+    "fastify": "^4.26.2",
+    "zod": "^3.22.4"
   }
 }
