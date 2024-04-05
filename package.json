@@ -1,0 +1,21 @@
+{
+  "name": "events-server",
+  "version": "1.0.0",
+  "description": "Welcome to the API section, which is part of the Event attendee management application for in-person events project.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch --env-file .env src/server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.4",
+    "prisma": "^5.12.1",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "fastify": "^4.26.2"
+  }
+}
