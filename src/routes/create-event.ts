@@ -16,6 +16,7 @@ export const createEvent = async (app: FastifyInstance) => {
             details: z.string().min(10).max(100).nullable(),
             maximumParticipant: z.number().int().positive().nullable()
           }),
+          
           response: {
             201: z.object({
               eventId: z.string().uuid()
