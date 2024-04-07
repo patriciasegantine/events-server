@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch --env-file .env src/server",
-    "studio": "prisma studio"
+    "studio": "prisma studio",
+    "seed": "npx prisma db seed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@types/node": "^20.12.4",
     "prisma": "^5.12.1",
     "tsx": "^4.7.2",
