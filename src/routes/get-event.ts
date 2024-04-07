@@ -23,6 +23,7 @@ export const getEvent = async (app: FastifyInstance) => {
                 slug: z.string(),
                 maximumParticipant: z.number().int().nullable(),
                 participantsAmount: z.number().int(),
+                createdAt: z.date()
               })
             })
           }
@@ -37,6 +38,7 @@ export const getEvent = async (app: FastifyInstance) => {
             title: true,
             details: true,
             slug: true,
+            createdAt: true,
             _count: {
               select: {
                 participants: true
@@ -45,7 +47,9 @@ export const getEvent = async (app: FastifyInstance) => {
             maximumParticipant: true,
             participants: true,
           },
-          where: {id: eventId}
+          where: {
+            id: eventId
+          },
         })
         
         if (event === null) {
@@ -60,6 +64,7 @@ export const getEvent = async (app: FastifyInstance) => {
             slug: event.slug,
             maximumParticipant: event.maximumParticipant,
             participantsAmount: event._count.participants,
+            createdAt: event.createdAt
           }
         })
         
