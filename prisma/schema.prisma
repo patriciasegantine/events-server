@@ -25,7 +25,7 @@ model Participant {
   createdAt DateTime @default(now())
   eventId   String
 
-  event   Event    @relation(fields: [eventId], references: [id])
+  event   Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
   checkIn CheckIn?
 
   @@unique([eventId, email])
@@ -37,7 +37,7 @@ model CheckIn {
   createdAt     DateTime @default(now())
   participantId Int      @unique
 
-  participant Participant @relation(fields: [participantId], references: [id])
+  participant Participant @relation(fields: [participantId], references: [id], onDelete: Cascade)
 
   @@map("checkIns")
 }
