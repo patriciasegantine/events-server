@@ -9,8 +9,13 @@ import { getEventParticipants } from "./routes/get-event-participants";
 import fastifySwagger from "@fastify/swagger";
 import fastifySwaggerUi from "@fastify/swagger-ui";
 import { errorHandler } from "./utils/error-handler";
+import fastifyCors from "@fastify/cors";
 
 const app = fastify()
+
+app.register(fastifyCors, {
+  origin: '*'
+})
 
 app.register(fastifySwagger, {
   swagger: {
