@@ -2,6 +2,7 @@ import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
 import { z } from "zod";
 import { prisma } from "../lib/prisma";
+import { BadRequestError } from "./_erros/bad-request-error";
 
 // todo: add nanoid to show on badge
 
@@ -52,7 +53,7 @@ export const getParticipantBadge = async (app: FastifyInstance) => {
         })
         
         if (participant === null) {
-          throw new Error('Participant not found')
+          throw new BadRequestError('Participant not found')
         }
         
         const baseUrl = `${request.protocol}://${request.hostname}`
