@@ -11,6 +11,8 @@ export const createEvent = async (app: FastifyInstance) => {
     .post('/events',
       {
         schema: {
+          summary: 'Create an event',
+          tags: ['event'],
           body: z.object({
             title: z.string().min(3).max(50),
             details: z.string().min(10).max(100).nullable(),
